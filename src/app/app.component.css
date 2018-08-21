@@ -1,0 +1,13 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.app-form {
+  margin: 16px;
+  display: flex;
+}
+.app-form--input {
+  flex-grow: 1;
+}
