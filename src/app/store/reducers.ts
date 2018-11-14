@@ -1,9 +1,5 @@
 import * as fromActions from './actions';
-
-export class ToDo {
-  label: string;
-  complete: boolean;
-}
+import { ToDo } from '../todo.model';
 
 export class State {
   loaded: boolean;

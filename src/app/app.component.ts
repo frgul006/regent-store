@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import * as fromStore from './store';
-import { ToDo } from './store';
+import { ToDo } from './todo.model';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +21,9 @@ export class AppComponent implements OnDestroy {
     };
 
     this.store = new fromStore.Store(reducers);
-    this.unsubscribe = this.store.subscribe(({ todos: state }) => (this.todos = state.todos));
+    this.unsubscribe = this.store.subscribe(
+      ({ todos: state }) => (this.todos = state.todos)
+    );
   }
 
   ngOnDestroy() {

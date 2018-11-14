@@ -1,4 +1,4 @@
-import { ToDo } from '.';
+import { ToDo } from '../todo.model';
 
 // Constants
 export const ADD_TODO = '[Todos] Add Todo';
