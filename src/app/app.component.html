@@ -1,21 +1,17 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced. -->
 <div class="app">
-  <h1>
-    ToDos
-  </h1>
+  <h1>ToDos</h1>
   <mat-card>
     <form class="app-form">
       <mat-form-field class="app-form--input">
-        <input matInput [(ngModel)]="field" [ngModelOptions]="{standalone: true}" placeholder="Some title">
+        <input matInput [(ngModel)]="field" [ngModelOptions]="{ standalone: true }" placeholder="Some title" />
       </mat-form-field>
       <button mat-button (click)="onClick()">Add</button>
     </form>
     <mat-card-content>
       <mat-selection-list #shoes>
-        <ng-container *ngFor="let todo of todos; let last = last">
-          <mat-list-option [(selected)]="todo.complete">
-            {{todo.label}}
-          </mat-list-option>
+        <ng-container *ngFor="let todo of (todos$ | async); let last = last">
+          <mat-list-option [(selected)]="todo.complete"> {{ todo.label }} </mat-list-option>
           <mat-divider *ngIf="!last"></mat-divider>
         </ng-container>
       </mat-selection-list>
